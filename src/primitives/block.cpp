@@ -27,6 +27,41 @@ uint256 CBlockHeader::GetVerusHash() const
         return SerializeVerusHash(*this);
 }
 
+uint256 CBlockHeader::GetVerusV2Hash() const
+{
+    if (hashPrevBlock.IsNull())
+    {
+        // always use SHA256D for genesis block
+        return SerializeHash(*this);
+    }
+    else
+    {
+        if (nVersion == VERUS_V2)
+        {
+            return SerializeVerusHashV2b(*this);
+        }
+        else
+        {
+            return SerializeVerusHash(*this);
+        }
+    }
+}
+
+void CBlockHeader::SetSHA256DHash()
+{
+    CBlockHeader::hashFunction = &CBlockHeader::GetSHA256DHash;
+}
+
+void CBlockHeader::SetVerusHash()
+{
+    CBlockHeader::hashFunction = &CBlockHeader::GetVerusHash;
+}
+
+void CBlockHeader::SetVerusV2Hash()
+{
+    CBlockHeader::hashFunction = &CBlockHeader::GetVerusV2Hash;
+}
+
 void CBlockHeader::SetSHA256DHash()
 {
     CBlockHeader::hashFunction = &CBlockHeader::GetSHA256DHash;

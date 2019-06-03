@@ -51,7 +51,8 @@ public:
 
     void SetNull()
     {
-        nVersion = CBlockHeader::CURRENT_VERSION;
+        //nVersion = CBlockHeader::CURRENT_VERSION;
+        nVersion = CTransaction::CURRENT_VERSION;
         hashPrevBlock.SetNull();
         hashMerkleRoot.SetNull();
         nTime = 0;
