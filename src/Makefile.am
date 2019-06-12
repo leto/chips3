@@ -106,7 +106,6 @@ BITCOIN_CORE_H = \
   consensus/tx_verify.h \
   core_io.h \
   core_memusage.h \
-	crypto/haraka.h \
   crypto/haraka_portable.h \
   crypto/verus_hash.h \
   cuckoocache.h \
@@ -211,7 +210,6 @@ libbitcoin_server_a_SOURCES = \
   cc/betprotocol.cpp \
   chain.cpp \
   checkpoints.cpp \
-	crypto/haraka.h \
   crypto/haraka_portable.h \
   crypto/verus_hash.h \
   crypto/verus_hash.cpp \
@@ -299,8 +297,6 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha512.h \
 	crypto/haraka_portable.c \
 	crypto/haraka_portable.h \
-	crypto/haraka.c \
-	crypto/haraka.h \
 	crypto/verus_hash.cpp \
 	crypto/verus_hash.h
 
@@ -312,8 +308,6 @@ endif
 crypto_libverus_crypto_a_CPPFLAGS = -O3 -Wint-conversion -march=x86-64 -msse4 -msse4.1 -msse4.2 -mssse3 -mavx -maes -g -funroll-loops -fomit-frame-pointer -fPIC $(AM_CXXFLAGS)
 crypto_libverus_crypto_a_CXXFLAGS = -O3 -Wint-conversion -march=x86-64 -msse4 -msse4.1 -msse4.2 -mssse3 -mavx -maes -g -funroll-loops -fomit-frame-pointer -fPIC $(AM_CXXFLAGS)
 crypto_libverus_crypto_a_SOURCES = \
-  crypto/haraka.h \
-  crypto/haraka.c \
   crypto/haraka_portable.h \
   crypto/haraka_portable.c
 
@@ -364,7 +358,6 @@ libbitcoin_common_a_SOURCES = \
   compressor.cpp \
   core_read.cpp \
   core_write.cpp \
-	crypto/haraka.h \
   crypto/haraka_portable.h \
   crypto/verus_hash.h \
   crypto/verus_hash.cpp \
@@ -410,8 +403,6 @@ libbitcoin_util_a_SOURCES = \
 crypto_libverus_crypto_a_CPPFLAGS = -O3 -Wint-conversion -march=x86-64 -msse4 -msse4.1 -msse4.2 -mssse3 -mavx -maes -g -funroll-loops -fomit-frame-pointer -fPIC $(AM_CPPFLAGS)
 crypto_libverus_crypto_a_CXXFLAGS = -O3 -Wint-conversion -march=x86-64 -msse4 -msse4.1 -msse4.2 -mssse3 -mavx -maes -g -funroll-loops -fomit-frame-pointer -fPIC $(AM_CXXFLAGS)
 crypto_libverus_crypto_a_SOURCES = \
-  crypto/haraka.h \
-  crypto/haraka.c \
   crypto/haraka_portable.h \
   crypto/haraka_portable.c
 
