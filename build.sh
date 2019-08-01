@@ -1,6 +1,6 @@
 #!/bin/bash
 # EMC2 build script for Ubuntu & Debian 9 v.3 (c) Decker (and webworker)
-# modified for CHIPS by Duke Leto
+# modified for CHIPS by Duke Leto + radix42
 
     CHIPS_ROOT=$(pwd)
 #    git pull
