@@ -12,7 +12,16 @@
 
 uint256 CBlockHeader::GetHash() const
 {
-    return SerializeHash(*this);
+    uint256 vhash;
+
+    if (nTime > Params().GetConsensus().nVerusTimestamp) {
+        fprintf(stderr,"Using verushash at %d\n", nTime);
+        //verus_hash_v2(vhash, *this, sizeof(*this) );
+        verus_hash_v2(vhash, nBits, sizeof(nBits) );
+        return vhash;
+    } else {
+        return SerializeHash(*this);
+    }
 }
 
 std::string CBlock::ToString() const
